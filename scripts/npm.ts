@@ -1,19 +1,18 @@
-import { build, emptyDir, type BuildOptions } from "dnt";
+import { build, emptyDir, type BuildOptions, type EntryPoint } from "dnt";
 import npmConfig from "./npm.json" assert { type: "json" };
 
 export const buildOptions: BuildOptions = {
   importMap: npmConfig.importMap,
-  entryPoints: npmConfig.entryPoints,
+  entryPoints: npmConfig.entryPoints as EntryPoint[],
   outDir: npmConfig.outDir,
   typeCheck: true,
-  scriptModule: false,
   shims: {
-    deno: "dev"
+    deno: "dev",
   },
   compilerOptions: {
     target: "Latest",
     importHelpers: true,
-    isolatedModules: false
+    isolatedModules: false,
   },
   packageManager: "npm",
   package: {
@@ -23,12 +22,12 @@ export const buildOptions: BuildOptions = {
     license: "MIT",
     repository: {
       type: "git",
-      url: "git+https://github.com/BioforestChain/plaoc.git"
+      url: "git+https://github.com/BioforestChain/plaoc.git",
     },
     bugs: {
-      url: "https://github.com/BioforestChain/plaoc/issues"
-    }
-  }
+      url: "https://github.com/BioforestChain/plaoc/issues",
+    },
+  },
 };
 
 if (import.meta.main) {
