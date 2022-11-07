@@ -1,0 +1,14 @@
+{
+  "name": "dnt-starter",
+  "version": "0.0.1",
+  "description": "Fast dnt template project.",
+  "importMap": "./import_map.json",
+  "outDir": "./.npm",
+  "entryPoints": [
+    {
+      "kind": "export",
+      "name": "dnt-starter",
+      "path": "./index.ts"
+    }
+  ]
+}

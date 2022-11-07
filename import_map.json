@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "dnt": "https://deno.land/x/highvalyrian_dnt@0.31.0-2/mod.ts"
+  }
+}
