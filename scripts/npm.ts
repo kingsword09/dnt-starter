@@ -12,7 +12,6 @@ export const buildOptions: BuildOptions = {
   compilerOptions: {
     target: "Latest",
     importHelpers: true,
-    isolatedModules: false,
   },
   packageManager: "npm",
   package: {
