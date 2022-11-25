@@ -1,3 +1,4 @@
+import * as path from "std_path";
 import { build, emptyDir, type BuildOptions, type EntryPoint } from "dnt";
 import npmConfig from "./npm.json" assert { type: "json" };
 
@@ -32,6 +33,12 @@ export const buildOptions: BuildOptions = {
 if (import.meta.main) {
   emptyDir("./.npm");
   await build(buildOptions);
-  await Deno.copyFile("./LICENSE", "./.npm/LICENSE");
-  await Deno.copyFile("./README.md", "./.npm/README.md");
+  await Deno.copyFile(
+    "./LICENSE",
+    path.relative(Deno.cwd(), path.resolve(npmConfig.outDir, "LICENSE"))
+  );
+  await Deno.copyFile(
+    "./README.md",
+    path.relative(Deno.cwd(), path.resolve(npmConfig.outDir, "README.md"))
+  );
 }

@@ -1,5 +1,6 @@
 {
   "imports": {
-    "dnt": "https://deno.land/x/dnt/mod.ts"
+    "dnt": "https://deno.land/x/dnt/mod.ts",
+    "std_path": "https://deno.land/std@0.166.0/path/mod.ts"
   }
 }
