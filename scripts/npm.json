@@ -7,7 +7,7 @@
   "entryPoints": [
     {
       "kind": "export",
-      "name": "dnt-starter",
+      "name": ".",
       "path": "./index.ts"
     }
   ]
