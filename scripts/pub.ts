@@ -1,20 +1,19 @@
 export const doPub = async (cwd: string) => {
-  const p = Deno.run({
+  const p = new Deno.Command("npm", {
     cwd,
-    cmd: ["npm", "publish", "--access", "public"],
+    args: ["publish", "--access", "public", "--no-git-checks"],
     stdout: "inherit",
     stderr: "inherit",
     stdin: "inherit",
   });
-  const status = await p.status();
-  p.close();
-  console.log(status);
+  const process = p.spawn();
+  const status = await process.status;
   return status.success;
 };
 
 export const doPubFromJson = async (inputConfigFile: string) => {
   const npmConfigs = (
-    await import(inputConfigFile, { assert: { type: "json" } })
+    await import(inputConfigFile, { with: { type: "json" } })
   ).default;
 
   await doPub(npmConfigs.outDir);
