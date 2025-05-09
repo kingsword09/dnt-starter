@@ -6,7 +6,6 @@
   "compilerOptions": {
     "allowJs": false,
     "lib": [
-      "deno.unstable",
       "deno.window"
     ],
     "strict": true,
@@ -29,7 +28,7 @@
     }
   },
   "imports": {
-    "dnt": "jsr:@deno/dnt",
-    "std_path": "jsr:@std/path"
+    "dnt": "jsr:@deno/dnt@^0.42.1",
+    "@std/path": "jsr:@std/path@^1"
   }
 }

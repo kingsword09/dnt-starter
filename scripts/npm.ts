@@ -1,4 +1,4 @@
-import * as path from "std_path";
+import * as path from "@std/path";
 import { build, emptyDir, type BuildOptions, type EntryPoint } from "dnt";
 import npmConfig from "./npm.json" with { type: "json" };
 

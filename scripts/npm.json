@@ -7,7 +7,7 @@
     {
       "kind": "export",
       "name": ".",
-      "path": "./index.ts"
+      "path": "./mod.ts"
     }
   ]
 }
